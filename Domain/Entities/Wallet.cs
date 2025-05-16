@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WalletWebApi.Domain.Entities
@@ -14,5 +15,7 @@ namespace WalletWebApi.Domain.Entities
         public decimal Balance { get; set; }
 
         public DateTime CreatedAtUTC { get; set; }
+
+        public List<WalletEvent> WalletEvents { get; set; } = new List<WalletEvent>();
     }
 }

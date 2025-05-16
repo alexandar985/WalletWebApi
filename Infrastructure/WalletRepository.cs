@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data.Entity;
+using System.Threading.Tasks;
+using WalletWebApi.Domain.Entities;
 using WalletWebApi.Interfaces;
 
 namespace WalletWebApi.Infrastructure
@@ -13,7 +13,19 @@ namespace WalletWebApi.Infrastructure
         {
             _context = context;
         }
-        
+        public async Task<Wallet> Create(Wallet wallet)
+        {
+            _context.Wallet.Add(wallet);
+            await _context.SaveChangesAsync();
+            return wallet;
+        }
+        public async Task<Wallet> GetWalletByIdAsync(Guid walletId, Guid userId)
+        {
+            var result = await _context.Wallet.FirstOrDefaultAsync(wallet => wallet.Id == walletId && wallet.UserId == userId);
+            return result;
+        }
+
+
     }
-    
+
 }

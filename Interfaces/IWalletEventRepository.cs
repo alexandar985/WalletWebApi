@@ -7,9 +7,8 @@ using WalletWebApi.Domain.Entities;
 
 namespace WalletWebApi.Interfaces
 {
-    public interface IWalletRepository
+    public interface IWalletEventRepository
     {
-        Task<Wallet> Create(Wallet wallet);
-        Task<Wallet> GetWalletByIdAsync(Guid walletId, Guid userId);
+        Task<WalletEvent> Add(WalletEvent walletEvent);
     }
 }

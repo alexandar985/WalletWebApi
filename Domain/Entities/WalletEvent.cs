@@ -7,7 +7,7 @@ using WalletWebApi.Domain.Enums;
 
 namespace WalletWebApi.Domain.Entities
 {
-    public class WalletEvents
+    public class WalletEvent
     {
         [Key]
         public Guid Id { get; set; }
