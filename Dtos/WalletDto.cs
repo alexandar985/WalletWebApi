@@ -15,8 +15,8 @@ namespace WalletWebApi.Dtos
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Balance must be a positive number.")]
 
+        public decimal Balance { get; set; } = 0m;
 
-        public decimal Balance { get; set; }
         [Required]
         public int Description { get; set; }
     }
