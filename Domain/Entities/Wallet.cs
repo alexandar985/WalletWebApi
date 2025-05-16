@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
-namespace WalletWebApi.Entities
+namespace WalletWebApi.Domain.Entities
 {
     public class Wallet
     {
         [Key]
         public Guid Id { get; set; }
 
+        public Guid UserId { get; set; }
+
         [ConcurrencyCheck]
         public decimal Balance { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAtUTC { get; set; }
     }
 }

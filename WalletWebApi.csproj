@@ -128,8 +128,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\WalletController.cs" />
+    <Compile Include="Domain\Entities\WalletEvents.cs" />
+    <Compile Include="Domain\Enums\FundDescription.cs" />
+    <Compile Include="Domain\Enums\WalletEventType.cs" />
+    <Compile Include="Dtos\WalletDto.cs" />
     <Compile Include="Infrastructure\WalletDbContext.cs" />
-    <Compile Include="Entities\Wallet.cs" />
+    <Compile Include="Domain\Entities\Wallet.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
