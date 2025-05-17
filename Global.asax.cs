@@ -1,16 +1,10 @@
 ﻿using Autofac;
-using Autofac.Core;
 using Autofac.Integration.WebApi;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+using System.Diagnostics;
 using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
+using System.Web.Http.ExceptionHandling;
 using WalletWebApi.Controllers;
+using WalletWebApi.Domain.Exceptions;
 using WalletWebApi.Infrastructure;
 using WalletWebApi.Interfaces;
 using WalletWebApi.Services;
@@ -28,6 +22,11 @@ namespace WalletWebApi
 
             // Get your HttpConfiguration.
             var config = GlobalConfiguration.Configuration;
+
+
+            config.Services.Add(typeof(IExceptionLogger),
+     new GlobalExceptionLogger(new
+     TraceSource("MyTraceSource", SourceLevels.All)));
 
             // Register DbContext (instance per request)
             builder.RegisterType<WalletDbContext>()

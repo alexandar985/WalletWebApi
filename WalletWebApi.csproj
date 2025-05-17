@@ -188,7 +188,11 @@
     <Compile Include="Domain\Entities\WalletEvent.cs" />
     <Compile Include="Domain\Enums\FundDescription.cs" />
     <Compile Include="Domain\Enums\WalletEventType.cs" />
+    <Compile Include="Domain\Exceptions\GlobalExceptionLogger.cs" />
+    <Compile Include="Dtos\AddFundsDto.cs" />
     <Compile Include="Dtos\WalletDto.cs" />
+    <Compile Include="Dtos\WalletEventDto.cs" />
+    <Compile Include="Dtos\WithdrawFundsDto.cs" />
     <Compile Include="Infrastructure\WalletDbContext.cs" />
     <Compile Include="Domain\Entities\Wallet.cs" />
     <Compile Include="Global.asax.cs">
